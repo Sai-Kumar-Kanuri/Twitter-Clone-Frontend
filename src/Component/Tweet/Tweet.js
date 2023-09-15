@@ -11,6 +11,8 @@ const Tweet = ({ tweet, setData }) => {
 
     const { currentUser } = useSelector((state) => state.user);
 
+    const baseURL = "https://twitter-backend-v0gs.onrender.com/api"
+
     const [userData, setUserData] = useState();
 
     const dateStr = formatDistance(new Date(tweet.createdAt), new Date());
@@ -20,7 +22,7 @@ const Tweet = ({ tweet, setData }) => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const findUser = await axios.get(`users/find/${tweet.userId}`);
+                const findUser = await axios.get(`${baseURL}/users/find/${tweet.userId}`);
                 setUserData(findUser.data)
             } catch (error) {
                 console.log(error);

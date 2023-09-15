@@ -1,19 +1,25 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 import HomeIcon from "@mui/icons-material/Home";
 import TagIcon from "@mui/icons-material/Tag";
 import PersonIcon from "@mui/icons-material/Person";
 
-import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../../Redux/userSlice";
 
+import { logout } from "../../Redux/userSlice.js";
 
 const LeftSideBar = () => {
+    const { currentUser } = useSelector((state) => state.user);
+
     const dispatch = useDispatch();
-    const handleLogOut = () => {
+    const navigate = useNavigate();
+
+    const handleLogout = () => {
         dispatch(logout());
-    }
+        navigate('/');
+    };
+
     return (
         <div className="flex flex-col h-full md:h-[90vh] justify-between mr-6">
             <div className="mt-6 flex flex-col space-y-4">
@@ -29,29 +35,30 @@ const LeftSideBar = () => {
                         <p>Explore</p>
                     </div>
                 </Link>
-                <Link to="/profile/">
+                <Link to={`/profile/${currentUser._id}`}>
                     <div className="flex items-center space-x-6 px-2 py-2 hover:bg-slate-200 rounded-full cursor-pointer">
                         <PersonIcon fontSize="large" />
                         <p>Profile</p>
                     </div>
                 </Link>
-
             </div>
-
             <div className="flex justify-between">
                 <div>
-                    <p className="font-bold">Username</p>
-                    <p className="font-bold">Username</p>
+                    <p className="font-bold">{currentUser.username}</p>
+                    <p className="font-bold">@{currentUser.username}</p>
                 </div>
                 <div>
-                    <Link to="/signin">
-                        <button className="bg-red-500 px-4 py-2 text-white rounded-full" onClick={handleLogOut}>Log Out</button>
+                    <Link to="signin">
+                        <button
+                            className="bg-red-500 px-4 py-2 text-white rounded-full"
+                            onClick={handleLogout}
+                        >
+                            Logout
+                        </button>
                     </Link>
                 </div>
             </div>
         </div>
-
-
     );
 };
 

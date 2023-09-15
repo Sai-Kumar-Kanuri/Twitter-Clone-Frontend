@@ -8,7 +8,9 @@ import { loginStart, loginSuccess, loginFailed } from "../../Redux/userSlice";
 const Signin = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const [email, setEmail] = useState("")
+    const [email, setEmail] = useState("");
+
+    const url = "https://twitter-backend-v0gs.onrender.com/api"
 
     const dispatch = useDispatch();
     const navigate = useNavigate();
@@ -18,7 +20,7 @@ const Signin = () => {
         e.preventDefault();
         dispatch(loginStart());
         try {
-            const res = await axios.post("auth/signin", { username, password });
+            const res = await axios.post(`${url}/auth/signin`, { username, password });
             dispatch(loginSuccess(res.data));
             navigate('/');
             console.log(res.data);
