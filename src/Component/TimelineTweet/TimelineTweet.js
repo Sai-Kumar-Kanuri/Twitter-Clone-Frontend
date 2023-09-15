@@ -16,7 +16,9 @@ const TimelineTweet = () => {
                     `/tweets/timeline/${currentUser._id}`
                 );
 
-                setTimeLine(timelineTweets.data);
+                console.log("timeline Tweets", timelineTweets);
+
+                setTimeLine(timelineTweets.json().data);
             } catch (err) {
                 console.log("error", err);
             }
@@ -27,17 +29,17 @@ const TimelineTweet = () => {
 
     console.log("Timeline", timeLine);
     return (
-        // <div className="mt-6">
-        //     {timeLine &&
-        //         timeLine.map((tweet) => {
-        //             return (
-        //                 <div key={tweet._id} className="p-2">
-        //                     <Tweet tweet={tweet} setData={setTimeLine} />
-        //                 </div>
-        //             );
-        //         })}
-        // </div>
-        { timeLine }
+        <div className="mt-6">
+            {timeLine &&
+                timeLine.map((tweet) => {
+                    return (
+                        <div key={tweet._id} className="p-2">
+                            <Tweet tweet={tweet} setData={setTimeLine} />
+                        </div>
+                    );
+                })}
+        </div>
+        // { timeLine }
     );
 };
 
