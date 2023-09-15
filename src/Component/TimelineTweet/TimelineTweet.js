@@ -27,16 +27,17 @@ const TimelineTweet = () => {
 
     console.log("Timeline", timeLine);
     return (
-        <div className="mt-6">
-            {timeLine &&
-                timeLine.map((tweet) => {
-                    return (
-                        <div key={tweet._id} className="p-2">
-                            <Tweet tweet={tweet} setData={setTimeLine} />
-                        </div>
-                    );
-                })}
-        </div>
+        // <div className="mt-6">
+        //     {timeLine &&
+        //         timeLine.map((tweet) => {
+        //             return (
+        //                 <div key={tweet._id} className="p-2">
+        //                     <Tweet tweet={tweet} setData={setTimeLine} />
+        //                 </div>
+        //             );
+        //         })}
+        // </div>
+        { timeLine }
     );
 };
 
