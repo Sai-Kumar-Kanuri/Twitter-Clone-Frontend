@@ -22,4 +22,4 @@ const UserPlaceholder = ({ setUserData, userData }) => {
   return <div>{userData?.username}</div>;
 };
 
-export default UserPlaceholder;
+export default UserPlaceholder; 
