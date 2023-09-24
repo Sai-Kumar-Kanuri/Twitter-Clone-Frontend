@@ -6,13 +6,15 @@ import Tweet from "../Tweet/Tweet";
 
 const ExploreTweets = () => {
 
+    const url = "https://twitter-backend-v0gs.onrender.com/api"
+
     const [explore, setExplore] = useState(null);
     const { currentUser } = useSelector((state) => state.user);
 
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const exploreTweets = await axios.get("/tweets/explore");
+                const exploreTweets = await axios.get(`${url}/tweets/explore`);
                 setExplore(exploreTweets.data);
             } catch (err) {
                 console.log("error", err);

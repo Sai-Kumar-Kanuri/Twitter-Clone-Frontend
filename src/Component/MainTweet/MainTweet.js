@@ -9,10 +9,12 @@ const MainTweet = () => {
 
     const { currentUser } = useSelector((state) => state.user);
 
+    const url = "https://twitter-backend-v0gs.onrender.com/api"
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const submitTweet = await axios.post("/tweets", {
+            const submitTweet = await axios.post(`${url}/tweets`, {
                 userId: currentUser._id,
                 description: tweetText,
             });

@@ -37,10 +37,13 @@ const Profile = () => {
     }, [currentUser, id])
 
 
+
     const handleFollow = async () => {
         if (!currentUser.following.includes(id)) {
+            const jwtToken = document.cookie;
+            console.log(jwtToken);
             try {
-                const follow = await axios.put(`/users/follow/${id}`, {
+                const follow = await axios.put(`${baseURL}/users/follow/${id}`, {
                     id: currentUser._id,
                 });
                 dispatch(following(id));
@@ -49,7 +52,7 @@ const Profile = () => {
             }
         } else {
             try {
-                const unfollow = await axios.put(`/users/unfollow/${id}`, {
+                const unfollow = await axios.put(`${baseURL}/users/unfollow/${id}`, {
                     id: currentUser._id,
                 });
 

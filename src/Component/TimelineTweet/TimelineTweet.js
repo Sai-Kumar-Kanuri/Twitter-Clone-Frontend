@@ -7,18 +7,25 @@ import Tweet from "../Tweet/Tweet";
 const TimelineTweet = () => {
     const [timeLine, setTimeLine] = useState(null);
 
-    const { currentUser } = useSelector((state) => state.user);
+    const { currentUser } = useSelector((state) => {
+        console.log(state);
+        return state.user;
+    });
+
+    console.log(currentUser);
+
+    const baseURL = "https://twitter-backend-v0gs.onrender.com/api"
 
     useEffect(() => {
         const fetchData = async () => {
             try {
                 const timelineTweets = await axios.get(
-                    `/tweets/timeline/${currentUser._id}`
+                    `${baseURL}/tweets/timeline/${currentUser._id}`
                 );
 
-                console.log("timeline Tweets", timelineTweets);
+                // console.log("timeline Tweets", timelineTweets);
 
-                setTimeLine(timelineTweets.json().data);
+                setTimeLine(timelineTweets.data);
             } catch (err) {
                 console.log("error", err);
             }
