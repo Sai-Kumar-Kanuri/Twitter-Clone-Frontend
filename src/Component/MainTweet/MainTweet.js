@@ -9,14 +9,23 @@ const MainTweet = () => {
 
     const { currentUser } = useSelector((state) => state.user);
 
+    console.log("current", currentUser);
+
     const url = "https://twitter-backend-v0gs.onrender.com/api"
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
+            const accessToken = localStorage.getItem('accessToken');
+
+
             const submitTweet = await axios.post(`${url}/tweets`, {
                 userId: currentUser._id,
                 description: tweetText,
+            }, {
+                headers: {
+                    Authorization: `Bearer ${accessToken}`, // Include the access token in the "Authorization" header
+                },
             });
             window.location.reload(false);
         } catch (err) {

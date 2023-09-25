@@ -8,11 +8,11 @@ const TimelineTweet = () => {
     const [timeLine, setTimeLine] = useState(null);
 
     const { currentUser } = useSelector((state) => {
-        console.log(state);
+        // console.log(state);
         return state.user;
     });
 
-    console.log(currentUser);
+    // console.log(currentUser);
 
     const baseURL = "https://twitter-backend-v0gs.onrender.com/api"
 
@@ -34,7 +34,7 @@ const TimelineTweet = () => {
         fetchData();
     }, [currentUser._id]);
 
-    console.log("Timeline", timeLine);
+    // console.log("Timeline", timeLine);
     return (
         <div className="mt-6">
             {timeLine &&

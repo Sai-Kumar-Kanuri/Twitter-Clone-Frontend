@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
+import Cookies from "js-cookie";
+
 
 import { useDispatch } from 'react-redux';
 import { useNavigate } from "react-router-dom";
@@ -21,9 +23,16 @@ const Signin = () => {
         dispatch(loginStart());
         try {
             const res = await axios.post(`${url}/auth/signin`, { username, password });
+            // console.log("DATA", res.data);
+            // console.log("cookie", document.cookie);
+            // const accessToken = Cookies.get("access_token");
+            localStorage.setItem('accessToken', res.data.token);
+            const accessToken = localStorage.getItem('accessToken');
+            console.log("token", accessToken);
+
             dispatch(loginSuccess(res.data));
             navigate('/');
-            console.log(res.data);
+            console.log("signin", res.data);
         } catch (err) {
             dispatch(loginFailed());
         }
