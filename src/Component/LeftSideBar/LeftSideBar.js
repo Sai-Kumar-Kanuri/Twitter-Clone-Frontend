@@ -16,6 +16,7 @@ const LeftSideBar = () => {
     const navigate = useNavigate();
 
     const handleLogout = () => {
+        localStorage.removeItem('accessToken');
         dispatch(logout());
         navigate('/');
     };

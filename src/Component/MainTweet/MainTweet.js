@@ -9,7 +9,7 @@ const MainTweet = () => {
 
     const { currentUser } = useSelector((state) => state.user);
 
-    console.log("current", currentUser);
+    // console.log("current", currentUser); 
 
     const url = "https://twitter-backend-v0gs.onrender.com/api"
 
