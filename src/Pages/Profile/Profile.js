@@ -39,12 +39,20 @@ const Profile = () => {
 
 
     const handleFollow = async () => {
+        const jwtToken = localStorage.getItem('accessToken');
         if (!currentUser.following.includes(id)) {
-            const jwtToken = document.cookie;
-            console.log(jwtToken);
+            // const jwtToken = document.cookie;
+            // console.log(jwtToken);
+
+
+
             try {
                 const follow = await axios.put(`${baseURL}/users/follow/${id}`, {
                     id: currentUser._id,
+                }, {
+                    headers: {
+                        Authorization: `Bearer ${jwtToken}`, // Include the JWT token in the "Authorization" header
+                    },
                 });
                 dispatch(following(id));
             } catch (err) {
@@ -54,6 +62,10 @@ const Profile = () => {
             try {
                 const unfollow = await axios.put(`${baseURL}/users/unfollow/${id}`, {
                     id: currentUser._id,
+                }, {
+                    headers: {
+                        Authorization: `Bearer ${jwtToken}`, // Include the JWT token in the "Authorization" header
+                    },
                 });
 
                 dispatch(following(id));
