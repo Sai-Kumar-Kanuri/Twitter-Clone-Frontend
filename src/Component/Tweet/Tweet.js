@@ -36,18 +36,18 @@ const Tweet = ({ tweet, setData }) => {
         e.preventDefault();
 
         try {
-            const like = await axios.put(`/tweets/${tweet._id}/like`, {
+            const like = await axios.put(`${baseURL}/tweets/${tweet._id}/like`, {
                 id: currentUser._id,
             });
 
             if (location.includes("profile")) {
-                const newData = await axios.get(`/tweets/user/all/${id}`);
+                const newData = await axios.get(`${baseURL}/tweets/user/all/${id}`);
                 setData(newData.data);
             } else if (location.includes("explore")) {
-                const newData = await axios.get(`/tweets/explore`);
+                const newData = await axios.get(`${baseURL}/tweets/explore`);
                 setData(newData.data);
             } else {
-                const newData = await axios.get(`/tweets/timeline/${currentUser._id}`);
+                const newData = await axios.get(`${baseURL}/tweets/timeline/${currentUser._id}`);
                 setData(newData.data);
             }
         } catch (err) {
