@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# Twitter Clone 🐦
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![Twitter Clone Preview](/.github/twitter-clone-preview.png)
 
-## Available Scripts
+> Twitter clone built with the MERN stack - MongoDB, Express.js, React, and Node.js.
 
-In the project directory, you can run:
+## Features ✨
 
-### `npm start`
+- **User Authentication:** Secure user registration and login system.
+- **Tweet Creation:** Users can create and post tweets with text content.
+- **Tweet Deletion:** Ability to delete own tweets.
+- **Follow/Unfollow:** Users can follow and unfollow other users.
+- **Timeline:** View a personalized timeline with tweets from followed users.
+- **Responsive Design:** Ensures a seamless user experience across different devices.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tech 🛠
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- [MongoDB](https://www.mongodb.com)
+- [Express.js](https://expressjs.com)
+- [React](https://reactjs.org)
+- [Node.js](https://nodejs.org)
+- [JWT Authentication](https://jwt.io)
+- [Mongoose](https://mongoosejs.com)
+- [Axios](https://axios-http.com)
+- [Redux Toolkit](https://redux-toolkit.js.org/)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Development 💻
 
-### `npm run build`
+### 1. Clone the repository
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+      ```bash
+      git clone https://github.com/YourUsername/Twitter-Clone.git
+      ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 1. Install dependencies
+      ```bash
+      cd twitter-clone
+      npm install
+      ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 1. Set up environment variables.
+       ```bash
+       MONGODB_URI=your-mongodb-uri
+       JWT_SECRET=your-jwt-secret
+        ```
 
-### `npm run eject`
+### 1. Start the development server.
+       ```bash
+       npm start
+       ```
+       Now, your development environment is set up, and you can start working on the project locally.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
