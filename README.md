@@ -1,6 +1,6 @@
 # Twitter Clone 🐦
 
-![Twitter Clone Preview]([/.github/twitter-clone-preview.png](https://github.com/Sai-Kumar-Kanuri/Twitter-Clone-Frontend/blob/main/public/preview.png))
+![Twitter Clone Preview](https://github.com/Sai-Kumar-Kanuri/Twitter-Clone-Frontend/blob/main/public/preview.png)
 <p align="center">
 Twitter clone built with the MERN stack - MongoDB, Express.js, React, and Node.js.
 </p>
